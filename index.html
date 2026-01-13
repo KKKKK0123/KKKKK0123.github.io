@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio ของ กมลวรรณ พุ่มพฤกษ - นักศึกษาฝึกงานด้าน IT/Web Design/UI/UX">
+    <meta name="keywords" content="กมลวรรณ พุ่มพฤกษ, UI/UX Designer, Web Designer, Portfolio, IT, คอมพิวเตอร์">
+    <meta name="author" content="กมลวรรณ พุ่มพฤกษ">
+    <meta property="og:title" content="กมลวรรณ พุ่มพฤกษ - UI/UX Designer & Web Developer">
+    <meta property="og:description" content="Portfolio ของนักศึกษาฝึกงานด้าน IT ที่มีความเชี่ยวชาญด้านการออกแบบ Web และ UI/UX">
+    <meta property="og:type" content="website">
+    <title>กมลวรรณ พุ่มพฤกษ | UI/UX Designer & Web Developer Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ============================================
+           CSS Variables - Soft Color Palette
+           ============================================ */
+        :root {
+            --primary-color: #5B8FB9;
+            --secondary-color: #301E67;
+            --accent-color: #03AED2;
+            --light-bg: #F8FAFC;
+            --white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-light: #64748B;
+            --border-color: #E2E8F0;
+            --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.12);
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        /* ============================================
+           Reset & Base Styles
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Prompt', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ============================================
+           Navigation
+           ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled {
+            padding: 0.7rem 5%;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: var(--secondary-color);
+            border-radius: 3px;
+            transition: var(--transition-smooth);
+        }
+
+        /* ============================================
+           Hero Section
+           ============================================ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6rem 5% 4rem;
+            background: linear-gradient(135deg, var(--light-bg) 0%, #E8F4F8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 70%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(91, 143, 185, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-greeting {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-name {
+            font-size: 3.2rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-title {
+            font-size: 1.4rem;
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-summary {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 1.8rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #4A7CA3;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(91, 143, 185, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--secondary-color);
+            border: 2px solid var(--border-color);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .avatar-container {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            padding: 5px;
+            position: relative;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #E8F4F8 0%, #D4E5F7 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            color: var(--primary-color);
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ============================================
+           Section Styles
+           ============================================ */
+        section {
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* ============================================
+           About Section
+           ============================================ */
+        .about {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            margin: 2rem 5%;
+            max-width: calc(100% - 10%);
+            box-shadow: var(--shadow-light);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+            background: #EEF2F7;
+        }
+
+        .info-item i {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+
+        .info-item span {
+            font-size: 0.95rem;
+        }
+
+        .about-text h3 {
+            font-size: 1.3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .strength-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 1rem;
+            background: linear-gradient(135deg, rgba(91, 143, 185, 0.1) 0%, rgba(3, 174, 210, 0.1) 100%);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        .strength-item i {
+            color: var(--primary-color);
+        }
+
+        /* ============================================
+           Skills Section
+           ============================================ */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-smooth);
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .skill-category h3 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .skill-category h3 i {
+            color: var(--primary-color);
+        }
+
+        .skill-item {
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-name {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        .skill-level {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            border-radius: 4px;
+            transition: width 1s ease-out;
+            width: 0;
+        }
+
+        /* Music Skills */
+        .music-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .music-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, rgba(91, 143, 185, 0.1) 0%, rgba(3, 174, 210, 0.1) 100%);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        .music-tag i {
+            color: var(--primary-color);
+        }
+
+        /* Sports Tags */
+        .sports-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .sport-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(135deg, rgba(48, 30, 103, 0.1) 0%, rgba(91, 143, 185, 0.1) 100%);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--secondary-color);
+        }
+
+        .sport-tag i {
+            color: var(--secondary-color);
+        }
+
+        /* ============================================
+           Education Section
+           ============================================ */
+        .education {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            margin: 2rem 5%;
+            max-width: calc(100% - 10%);
+            box-shadow: var(--shadow-light);
+        }
+
+        .education-timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .education-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            border-radius: 3px;
+        }
+
+        .education-item {
+            position: relative;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: var(--light-bg);
+            border-radius: var(--radius-md);
+            transition: var(--transition-smooth);
+        }
+
+        .education-item:hover {
+            transform: translateX(10px);
+            background: #EEF2F7;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            background: var(--white);
+            border: 3px solid var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .education-year {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+        }
+
+        .education-degree {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .education-school {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* ============================================
+           Experience Section
+           ============================================ */
+        .experience-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .experience-item {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-smooth);
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .experience-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: var(--white);
+            border-radius: var(--radius-sm);
+            font-size: 1.5rem;
+        }
+
+        .experience-content h3 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.3rem;
+        }
+
+        .experience-company {
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .experience-period {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .experience-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* ============================================
+           Projects Section
+           ============================================ */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            transition: var(--transition-smooth);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .project-image {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: var(--white);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tag {
+            padding: 0.3rem 0.8rem;
+            background: var(--light-bg);
+            color: var(--primary-color);
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+        }
+
+        .project-link:hover {
+            background: #4A7CA3;
+            color: var(--white);
+        }
+
+        .project-link.outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .project-link.outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* ============================================
+           Contact Section
+           ============================================ */
+        .contact {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            margin: 2rem 5%;
+            max-width: calc(100% - 10%);
+            box-shadow: var(--shadow-light);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--light-bg);
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+            background: #EEF2F7;
+        }
+
+        .contact-item i {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 1.1rem;
+        }
+
+        .contact-item-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-item-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .contact-item-value {
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-bg);
+            color: var(--secondary-color);
+            border-radius: 50%;
+            font-size: 1.2rem;
+            transition: var(--transition-smooth);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .contact-form {
+            background: var(--light-bg);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: var(--transition-smooth);
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .submit-btn:hover {
+            background: #4A7CA3;
+            transform: translateY(-2px);
+        }
+
+        /* ============================================
+           Footer
+           ============================================ */
+        footer {
+            background: var(--secondary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem 5%;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* ============================================
+           Animations
+           ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           Responsive Design
+           ============================================ */
+        @media (max-width: 992px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                order: 2;
+            }
+
+            .hero-image {
+                order: 1;
+            }
+
+            .hero-name {
+                font-size: 2.5rem;
+            }
+
+            .hero-summary {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .avatar-container {
+                width: 280px;
+                height: 280px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 2rem;
+                gap: 1.5rem;
+                box-shadow: var(--shadow-medium);
+                transform: translateY(-150%);
+                transition: var(--transition-smooth);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+            }
+
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: rotate(45deg) translate(6px, 6px);
+            }
+
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+
+            .hero {
+                padding: 8rem 5% 4rem;
+            }
+
+            .hero-name {
+                font-size: 2rem;
+            }
+
+            .hero-title {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .strengths-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .experience-item {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                justify-content: center;
+            }
+
+            .avatar-container {
+                width: 220px;
+                height: 220px;
+            }
+
+            .avatar {
+                font-size: 5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Kamonwan<span>.Portfolio</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">หน้าหลัก</a></li>
+            <li><a href="#about">เกี่ยวกับ</a></li>
+            <li><a href="#skills">ทักษะ</a></li>
+            <li><a href="#education">การศึกษา</a></li>
+            <li><a href="#experience">ประสบการณ์</a></li>
+            <li><a href="#projects">ผลงาน</a></li>
+            <li><a href="#contact">ติดต่อ</a></li>
+        </ul>
+        <div class="mobile-menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <p class="hero-greeting">สวัสดีค่ะ ยินดีต้อนรับ</p>
+                <h1 class="hero-name">กมลวรรณ พุ่มพฤกษ</h1>
+                <p class="hero-title">นักศึกษาฝึกงานด้าน IT | Web Designer | UI/UX Designer</p>
+                <p class="hero-summary">
+                    นักศึกษาสาขาวิทยาการคอมพิวเตอร์ที่มีความหลงใหลในการออกแบบเว็บไซต์และประสบการณ์ผู้ใช้ 
+                    มีทักษะในการใช้วิธีการเจรจาเพื่อแก้ปัญหา มีความรับผิดชอบสูง และพร้อมเรียนรู้สิ่งใหม่อย่างไม่หยุดยั้ง
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-eye"></i>
+                        ดูผลงาน
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        ติดต่อ
+                    </a>
+                    <a href="assets/CV_Kamonwan_Phumpruk.pdf" download class="btn btn-secondary">
+                        <i class="fas fa-download"></i>
+                        ดาวน์โหลด CV
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-container">
+                    <div class="avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-header">
+            <h2 class="section-title">เกี่ยวกับฉัน</h2>
+            <p class="section-subtitle">Get to know me better</p>
+        </div>
+        <div class="about-content">
+            <div class="about-info">
+                <div class="info-item">
+                    <i class="fas fa-user"></i>
+                    <span>กมลวรรณ พุ่มพฤกษ</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <span>065-705-8871</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>kamonwan.p12345@gmail.com</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>ธัญบุรี, ปทุมธานี</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-birthday-cake"></i>
+                    <span>11 เมษายน 2548 (20 ปี)</span>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>สวัสดีค่ะ!</h3>
+                <p>
+                    ฉันเป็นนักศึกษาสาขาวิทยาการคอมพิวเตอร์ที่กำลังมองหาโอกาสในการฝึกงานด้าน IT 
+                    โดยเฉพาะงานออกแบบ Web และ UI/UX ฉันมีความสามารถในการทำงานได้ตามเป้าหมาย
+                    มีความเคารพเกรงใจผู้อื่น และพร้อมรับฟังความคิดเห็นของทุกคน
+                </p>
+                <p>
+                    ฉันเชื่อมั่นในการทำงานด้วยเหตุผลมากกว่าอารมณ์ มีความยืดหยุ่นและปรับตัวเก่ง 
+                    นอกจากนี้ยังมีความเป็นศิลปินที่ช่วยเพิ่มความคิดสร้างสรรค์ในการทำงาน
+                </p>
+                <h3 style="margin-top: 1.5rem;">จุดแข็งของฉัน</h3>
+                <div class="strengths-grid">
+                    <div class="strength-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>เป็นผู้ฟังที่ดี</span>
+                    </div>
+                    <div class="strength-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>ทำงานจำเจได้</span>
+                    </div>
+                    <div class="strength-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>เจรจาต่อรองเก่ง</span>
+                    </div>
+                    <div class="strength-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>รับผิดชอบสูง</span>
+                    </div>
+                    <div class="strength-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>อดทน</span>
+                    </div>
+                    <div class="strength-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>มุ่งเป้าหมาย</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="section-header">
+            <h2 class="section-title">ทักษะความสามารถ</h2>
+            <p class="section-subtitle">My Skills & Competencies</p>
+        </div>
+        <div class="skills-grid">
+            <!-- Technical Skills -->
+            <div class="skill-category animate-on-scroll">
+                <h3><i class="fas fa-code"></i> ทักษะด้านคอมพิวเตอร์</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">HTML/CSS</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="75"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">JavaScript</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="70"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">UI/UX Design</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="75"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Figma</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="70"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">Microsoft Office</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="85"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skills -->
+            <div class="skill-category animate-on-scroll">
+                <h3><i class="fas fa-users"></i> ทักษะการทำงาน</h3>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">การสื่อสาร</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="90"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">การทำงานเป็นทีม</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="85"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">การแก้ปัญหา</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="80"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-header">
+                        <span class="skill-name">การจัดการเวลา</span>
+                        <span class="skill-level">Intermediate</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" data-width="75"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Music Skills -->
+            <div class="skill-category animate-on-scroll">
+                <h3><i class="fas fa-music"></i> ดนตรี</h3>
+                <div class="music-skills">
+                    <div class="music-tag">
+                        <i class="fas fa-guitar"></i>
+                        กีต้าร์ (ขั้นต้น)
+                    </div>
+                    <div class="music-tag">
+                        <i class="fas fa-music"></i>
+                        อังกะลุง (ขั้นสูง)
+                    </div>
+                    <div class="music-tag">
+                        <i class="fas fa-music"></i>
+                        ขลุ่ย
+                    </div>
+                    <div class="music-tag">
+                        <i class="fas fa-piano"></i>
+                        เปียโน
+                    </div>
+                    <div class="music-tag">
+                        <i class="fas fa-music"></i>
+                        อูคูเลเล่
+                    </div>
+                    <div class="music-tag">
+                        <i class="fas fa-drum"></i>
+                        กลอง
+                    </div>
+                    <div class="music-tag">
+                        <i class="fas fa-keyboard"></i>
+                        คีย์บอร์ด
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sports Skills -->
+            <div class="skill-category animate-on-scroll">
+                <h3><i class="fas fa-running"></i> กีฬา</h3>
+                <div class="sports-tags">
+                    <div class="sport-tag">
+                        <i class="fas fa-medal"></i>
+                        แบดมินตัน (ขั้นกลาง)
+                    </div>
+                    <div class="sport-tag">
+                        <i class="fas fa-basketball-ball"></i>
+                        บาสเก็ตบอล (ขั้นต้น)
+                    </div>
+                    <div class="sport-tag">
+                        <i class="fas fa-table-tennis"></i>
+                        ปิงปอง (ขั้นต้น)
+                    </div>
+                    <div class="sport-tag">
+                        <i class="fas fa-skate"></i>
+                        สเก็ตบอร์ด (ขั้นต้น)
+                    </div>
+                    <div class="sport-tag">
+                        <i class="fas fa-bicycle"></i>
+                        จักรยาน (มืออาชีพ)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="section-header">
+            <h2 class="section-title">การศึกษา</h2>
+            <p class="section-subtitle">Educational Background</p>
+        </div>
+        <div class="education-timeline">
+            <div class="education-item animate-on-scroll">
+                <span class="education-year">ปี 2567 (2017)</span>
+                <h3 class="education-degree">ปริญญาตรี วิทยาศาสตรบัณฑิต</h3>
+                <p class="education-school">สาขาวิทยาการคอมพิวเตอร์ คณะวิทยาศาสตร์และเทคโนโลยี</p>
+                <p class="education-school">มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="section-header">
+            <h2 class="section-title">ประสบการณ์</h2>
+            <p class="section-subtitle">Work Experience</p>
+        </div>
+        <div class="experience-timeline">
+            <div class="experience-item animate-on-scroll">
+                <div class="experience-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <div class="experience-content">
+                    <h3>นักศึกษาฝึกงานด้าน IT</h3>
+                    <p class="experience-company">บริษัท / องค์กรต่างๆ</p>
+                    <p class="experience-period">พร้อมเริ่มงานได้ทันที (แจ้งล่วงหน้า 1 อาทิตย์)</p>
+                    <p class="experience-description">
+                        กำลังมองหาโอกาสในการฝึกงานด้าน IT โดยเฉพาะงานออกแบบ Web และ UI/UX 
+                        มีความกระตือรือร้นในการเรียนรู้และพัฒนาทักษะใหม่ๆ อย่างต่อเนื่อง
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="section-header">
+            <h2 class="section-title">ผลงาน</h2>
+            <p class="section-subtitle">My Projects</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card animate-on-scroll">
+                <div class="project-image">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div class="project-content">
+                    <h3>เว็บไซต์ Portfolio</h3>
+                    <p>พัฒนาเว็บไซต์ส่วนตัวเพื่อแสดงผลงานและประวัติการทำงาน ออกแบบด้วยหลัก UI/UX ที่ทันสมัย</p>
+                    <div class="project-tags">
+                        <span class="project-tag">HTML5</span>
+                        <span class="project-tag">CSS3</span>
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">Responsive</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-eye"></i> ดูเว็บไซต์</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card animate-on-scroll">
+                <div class="project-image">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <div class="project-content">
+                    <h3>UI Design Project</h3>
+                    <p>ออกแบบ User Interface สำหรับแอปพลิเคชันมือถือ โดยใช้หลักการ User-Centered Design</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Figma</span>
+                        <span class="project-tag">UI Design</span>
+                        <span class="project-tag">Prototyping</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-eye"></i> ดูผลงาน</a>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card animate-on-scroll">
+                <div class="project-image">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <div class="project-content">
+                    <h3>Interactive Web Application</h3>
+                    <p>พัฒนา Web Application ที่มี Interaction สวยงามและใช้งานง่าย พร้อม Animation ที่น่าสนใจ</p>
+                    <div class="project-tags">
+                        <span class="project-tag">JavaScript</span>
+                        <span class="project-tag">CSS Animation</span>
+                        <span class="project-tag">Interactive</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fas fa-eye"></i> ดูผลงาน</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-header">
+            <h2 class="section-title">ติดต่อ</h2>
+            <p class="section-subtitle">Get In Touch</p>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info">
+                <h3>มาสร้างสรรค์งานด้วยกัน!</h3>
+                <p>
+                    ฉันยินดีรับฟังข้อเสนอแนะและความคิดเห็นจากทุกคน 
+                    หากคุณสนใจในประวัติของฉันหรือต้องการพูดคุยเกี่ยวกับโอกาสในการทำงาน 
+                    สามารถติดต่อมาได้เลยค่ะ
+                </p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div class="contact-item-text">
+                            <span class="contact-item-label">โทรศัพท์</span>
+                            <span class="contact-item-value">065-705-8871</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-item-text">
+                            <span class="contact-item-label">อีเมล</span>
+                            <span class="contact-item-value">kamonwan.p12345@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div class="contact-item-text">
+                            <span class="contact-item-label">ที่อยู่</span>
+                            <span class="contact-item-value">ธัญบุรี, ปทุมธานี</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">ชื่อ-นามสกุล</label>
+                    <input type="text" id="name" name="name" placeholder="กรุณากรอกชื่อ-นามสกุล" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">อีเมล</label>
+                    <input type="email" id="email" name="email" placeholder="กรุณากรอกอีเมล" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">หัวข้อ</label>
+                    <input type="text" id="subject" name="subject" placeholder="กรุณากรอกหัวข้อ" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">ข้อความ</label>
+                    <textarea id="message" name="message" placeholder="กรุณากรอกข้อความ" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> ส่งข้อความ
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 กมลวรรณ พุ่มพฤกษ. สงวนลิขสิทธิ์</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // ============================================
+        // Mobile Menu Toggle
+        // ============================================
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // ============================================
+        // Navbar Scroll Effect
+        // ============================================
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================
+        // Smooth Scroll for Anchor Links
+        // ============================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============================================
+        // Animate on Scroll
+        // ============================================
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    
+                    // Animate progress bars
+                    const progressFill = entry.target.querySelectorAll('.progress-fill');
+                    progressFill.forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        setTimeout(() => {
+                            bar.style.width = width + '%';
+                        }, 200);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ============================================
+        // Contact Form Handling
+        // ============================================
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Show success message (in real application, send to server)
+            alert('ขอบคุณสำหรับข้อความ! ฉันจะติดต่อกลับโดยเร็วที่สุด');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // ============================================
+        // Active Navigation Link on Scroll
+        // ============================================
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks2 = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks2.forEach(link => {
+                link.style.color = '';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.color = '#5B8FB9';
+                }
+            });
+        });
+
+        // ============================================
+        // Typing Effect for Hero Title (Optional)
+        // ============================================
+        const titles = ['นักศึกษาฝึกงานด้าน IT', 'Web Designer', 'UI/UX Designer'];
+        let titleIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const heroTitle = document.querySelector('.hero-title');
+
+        function typeEffect() {
+            const currentTitle = titles[titleIndex];
+            
+            if (isDeleting) {
+                heroTitle.textContent = currentTitle.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                heroTitle.textContent = currentTitle.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 50 : 100;
+
+            if (!isDeleting && charIndex === currentTitle.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                titleIndex = (titleIndex + 1) % titles.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typeSpeed);
+        }
+
+        // Start typing effect after 2 seconds
+        setTimeout(typeEffect, 2000);
+
+        // ============================================
+        // Add some interactive hover effects
+        // ============================================
+        document.querySelectorAll('.info-item, .contact-item, .education-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px)';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(0)';
+            });
+        });
+    </script>
+</body>
+</html>
